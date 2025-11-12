@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #2c5f2d 0%, #97bc62 100%);
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: top 0.3s;
+}
+
+.header-hidden {
+    top: -80px;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+section {
+    padding: 8rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- CAMBIO MINIMALISTA: Título de Sección --- */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem; /* Más pequeño y limpio */
+    color: #333; /* Color más discreto */
+    margin-bottom: 2.5rem;
+    /* Eliminamos la línea verde */
+    border-bottom: none; 
+    display: block;
+    padding-bottom: 0;
+    font-weight: 300; /* Tipografía más ligera */
+}
+
+/* --- CAMBIO MINIMALISTA: Contenedor de Rejilla --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; /* Espacio más controlado */
+    margin-top: 1.5rem;
+}
+
+.hero {
+    background: linear-gradient(rgba(44, 95, 45, 0.7), rgba(44, 95, 45, 0.7)),
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=600&fit=crop');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 10rem 2rem 6rem;
+    margin-top: 70px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background: #97bc62;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #7a9d4d;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* --- CAMBIO MINIMALISTA: Tarjeta de Plato (Estructura) --- */
+.plato-card {
+    background: white;
+    border-radius: 4px; /* Bordes mínimos */
+    overflow: hidden;
+    /* Eliminamos la sombra */
+    box-shadow: none; 
+    border: 1px solid #eee; /* Borde muy sutil */
+    transition: border-color 0.3s ease-out, transform 0.3s ease-out; 
+}
+
+/* --- CAMBIO MINIMALISTA: Efecto Hover --- */
+.plato-card:hover {
+    transform: translateY(-3px); /* Ligero levantamiento */
+    border-color: #97bc62; /* Borde de color al interactuar */
+    box-shadow: none; /* Aseguramos que no haya sombra */
+}
+
+.plato-card img {
+    width: 100%;
+    height: 200px; /* Altura ajustada */
+    object-fit: cover;
+    transition: opacity 0.3s; 
+}
+
+/* --- CAMBIO MINIMALISTA: Imagen Hover --- */
+.plato-card:hover img {
+    opacity: 0.9; /* Opacidad sutil */
+    transform: none; /* Eliminamos el zoom */
+}
+
+.plato-info {
+    padding: 1.2rem; /* Relleno limpio */
+}
+
+/* --- CAMBIO MINIMALISTA: Tipo de Plato (Etiqueta) --- */
+.plato-tipo {
+    color: #97bc62; /* Color de acento */
+    background: none; /* Fondo transparente */
+    display: block; /* En su propia línea */
+    padding: 0;
+    border-radius: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem; 
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+}
+
+/* --- CAMBIO MINIMALISTA: Nombre del Plato --- */
+.plato-nombre {
+    font-size: 1.3rem; 
+    margin: 0.3rem 0;
+    color: #333; 
+    font-weight: 400; /* Peso normal, no tan negrita */
+}
+
+/* --- CAMBIO MINIMALISTA: Descripción --- */
+.plato-descripcion {
+    color: #666; 
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* --- CAMBIO MINIMALISTA: Mensaje Final --- */
+#menu h3 {
+    text-align: center; 
+    margin-top: 4rem; 
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    color: #97bc62;
+    font-size: 1.2rem; /* Tamaño discreto */
+    font-style: normal;
+    font-weight: 300;
+    border: none;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c5f2d;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #97bc62;
+}
+
+.admin-login {
+    max-width: 400px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.admin-panel {
+    background: #f5f5f5;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.plato-admin {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: start;
+}
+
+.plato-admin img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.plato-admin-info {
+    flex: 1;
+}
+
+.plato-admin-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.btn-danger {
+    background: #d32f2f;
+}
+
+.btn-danger:hover {
+    background: #b71c1c;
+}
+
+.edit-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background: #2c5f2d;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#reservas section {
+    /* 1. Reducimos el padding superior a 4rem (antes 6rem), sigue siendo suficiente para el header fijo */
+    padding-top: 4rem; 
+    /* 2. Reducimos el padding inferior para ganar espacio */
+    padding-bottom: 0rem; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* 3. Ajustamos el cálculo de la altura visible (ahora 130px de margen vertical total) */
+    min-height: calc(100vh - 130px); 
+}
+
+.form-container {
+    max-width: 450px; 
+    width: 100%;
+    margin: 0;
+
+    /* 4. Reducimos el padding interno del contenedor del formulario para comprimir */
+    padding: 1.5rem; /* Antes 2rem */
+}
+
+/* 5. Reducimos el margen de los grupos de campos */
+.form-group {
+    margin-bottom: 1rem; /* Antes 1.5rem */
+}
+
+/* 6. Reducimos el margen del título */
+#reservas .section-title {
+    margin-bottom: 1rem; /* Antes 3rem */
+}
+
+/* Estilos para la Tarjeta de Reserva en Admin */
+.reserva-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.reserva-card strong {
+    color: #2c5f2d;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .gallery,
+    .menu-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Media Queries (Responsividad de menú actualizada para minimalismo) --- */
+
+@media (max-width: 992px) {
+    /* En tabletas, se ven mejor 2 columnas en lugar de 3 */
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    /* En móviles pequeños, solo 1 columna para mejor lectura */
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
