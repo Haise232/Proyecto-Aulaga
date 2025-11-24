@@ -18,7 +18,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: top 0.3s;
 }
 
@@ -69,27 +69,26 @@ section {
 /* --- CAMBIO MINIMALISTA: Título de Sección --- */
 .section-title {
     text-align: center;
-    font-size: 2.5rem; /* Más pequeño y limpio */
-    color: #333; /* Color más discreto */
+    font-size: 2.5rem;
+    color: #333;
     margin-bottom: 2.5rem;
-    /* Eliminamos la línea verde */
-    border-bottom: none; 
+    border-bottom: none;
     display: block;
     padding-bottom: 0;
-    font-weight: 300; /* Tipografía más ligera */
+    font-weight: 300;
 }
 
 /* --- CAMBIO MINIMALISTA: Contenedor de Rejilla --- */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem; /* Espacio más controlado */
+    gap: 1.5rem;
     margin-top: 1.5rem;
 }
 
 .hero {
     background: linear-gradient(rgba(44, 95, 45, 0.7), rgba(44, 95, 45, 0.7)),
-                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=600&fit=crop');
+        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=600&fit=crop');
     background-size: cover;
     background-position: center;
     color: white;
@@ -135,7 +134,7 @@ section {
 .gallery-item {
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-item img {
@@ -159,63 +158,62 @@ section {
 /* --- CAMBIO MINIMALISTA: Tarjeta de Plato (Estructura) --- */
 .plato-card {
     background: white;
-    border-radius: 4px; /* Bordes mínimos */
+    border-radius: 4px;
     overflow: hidden;
-    /* Eliminamos la sombra */
-    box-shadow: none; 
-    border: 1px solid #eee; /* Borde muy sutil */
-    transition: border-color 0.3s ease-out, transform 0.3s ease-out; 
+    box-shadow: none;
+    border: 1px solid #eee;
+    transition: border-color 0.3s ease-out, transform 0.3s ease-out;
 }
 
 /* --- CAMBIO MINIMALISTA: Efecto Hover --- */
 .plato-card:hover {
-    transform: translateY(-3px); /* Ligero levantamiento */
-    border-color: #97bc62; /* Borde de color al interactuar */
-    box-shadow: none; /* Aseguramos que no haya sombra */
+    transform: translateY(-3px);
+    border-color: #97bc62;
+    box-shadow: none;
 }
 
 .plato-card img {
     width: 100%;
-    height: 200px; /* Altura ajustada */
+    height: 200px;
     object-fit: cover;
-    transition: opacity 0.3s; 
+    transition: opacity 0.3s;
 }
 
 /* --- CAMBIO MINIMALISTA: Imagen Hover --- */
 .plato-card:hover img {
-    opacity: 0.9; /* Opacidad sutil */
-    transform: none; /* Eliminamos el zoom */
+    opacity: 0.9;
+    transform: none;
 }
 
 .plato-info {
-    padding: 1.2rem; /* Relleno limpio */
+    padding: 1.2rem;
 }
 
 /* --- CAMBIO MINIMALISTA: Tipo de Plato (Etiqueta) --- */
 .plato-tipo {
-    color: #97bc62; /* Color de acento */
-    background: none; /* Fondo transparente */
-    display: block; /* En su propia línea */
+    color: #97bc62;
+    background: none;
+    display: block;
     padding: 0;
     border-radius: 0;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.75rem; 
+    font-size: 0.75rem;
     margin-bottom: 0.3rem;
     letter-spacing: 1px;
 }
 
 /* --- CAMBIO MINIMALISTA: Nombre del Plato --- */
 .plato-nombre {
-    font-size: 1.3rem; 
+    font-size: 1.3rem;
     margin: 0.3rem 0;
-    color: #333; 
-    font-weight: 400; /* Peso normal, no tan negrita */
+    color: #333;
+    font-weight: 400;
 }
 
 /* --- CAMBIO MINIMALISTA: Descripción --- */
 .plato-descripcion {
-    color: #666; 
+    color: #666;
     margin-top: 0.5rem;
     line-height: 1.5;
     font-size: 0.9rem;
@@ -223,13 +221,13 @@ section {
 
 /* --- CAMBIO MINIMALISTA: Mensaje Final --- */
 #menu h3 {
-    text-align: center; 
-    margin-top: 4rem; 
+    text-align: center;
+    margin-top: 4rem;
     padding: 0;
     background: none;
     border-radius: 0;
     color: #97bc62;
-    font-size: 1.2rem; /* Tamaño discreto */
+    font-size: 1.2rem;
     font-style: normal;
     font-weight: 300;
     border: none;
@@ -241,7 +239,7 @@ section {
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -276,7 +274,7 @@ section {
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .admin-panel {
@@ -366,37 +364,28 @@ footer {
 }
 
 #reservas section {
-    /* 1. Reducimos el padding superior a 4rem (antes 6rem), sigue siendo suficiente para el header fijo */
-    padding-top: 4rem; 
-    /* 2. Reducimos el padding inferior para ganar espacio */
-    padding-bottom: 0rem; 
-    
+    padding-top: 4rem;
+    padding-bottom: 0rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    /* 3. Ajustamos el cálculo de la altura visible (ahora 130px de margen vertical total) */
-    min-height: calc(100vh - 130px); 
+    min-height: calc(100vh - 130px);
 }
 
 .form-container {
-    max-width: 450px; 
+    max-width: 450px;
     width: 100%;
     margin: 0;
-
-    /* 4. Reducimos el padding interno del contenedor del formulario para comprimir */
-    padding: 1.5rem; /* Antes 2rem */
+    padding: 1.5rem;
 }
 
-/* 5. Reducimos el margen de los grupos de campos */
 .form-group {
-    margin-bottom: 1rem; /* Antes 1.5rem */
+    margin-bottom: 1rem;
 }
 
-/* 6. Reducimos el margen del título */
 #reservas .section-title {
-    margin-bottom: 1rem; /* Antes 3rem */
+    margin-bottom: 1rem;
 }
 
 /* Estilos para la Tarjeta de Reserva en Admin */
@@ -417,6 +406,189 @@ footer {
     font-weight: 600;
 }
 
+/* =================================================================
+   GESTIÓN DE MENÚ SEMANAL - ADMIN
+   ================================================================= */
+
+/* Selector de semana */
+.semana-input {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.semana-input:focus {
+    outline: none;
+    border-color: #97bc62;
+}
+
+/* Información de semana seleccionada */
+#semanaInfo {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 4px solid #97bc62;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+#semanaInfo strong {
+    color: #2c5f2d;
+    font-weight: 600;
+}
+
+#semanaTexto {
+    color: #495057;
+    font-weight: 500;
+}
+
+/* Grid de platos disponibles */
+.platos-disponibles-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Sección por tipo de plato */
+.tipo-section {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.tipo-section h5 {
+    color: #2c5f2d;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #97bc62;
+}
+
+/* Plato seleccionable (con checkbox) */
+.plato-selectable {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plato-selectable:hover {
+    background: #e9ecef;
+    border-color: #97bc62;
+    transform: translateX(5px);
+}
+
+.plato-selectable input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #97bc62;
+    flex-shrink: 0;
+}
+
+.plato-selectable img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+    background: #f0f0f0;
+    display: block;
+}
+
+.plato-selectable-info {
+    flex: 1;
+}
+
+.plato-selectable-info strong {
+    display: block;
+    color: #2c5f2d;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.plato-selectable-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Checkbox marcado - efecto visual */
+.plato-selectable:has(input:checked) {
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+    border-color: #97bc62;
+    box-shadow: 0 2px 8px rgba(151, 188, 98, 0.2);
+}
+
+/* Grid de alérgenos en formularios */
+.alergenos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.alergenos-grid label {
+    display: inline-flex !important;
+    align-items: center;
+    padding: 0.4rem 0.6rem;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.alergenos-grid label:hover {
+    background: #e9ecef;
+    border-color: #97bc62;
+}
+
+.alergenos-grid input[type="checkbox"] {
+    margin-right: 5px;
+    accent-color: #97bc62;
+}
+
+/* Animación de carga */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================================================
+   MEDIA QUERIES - RESPONSIVE
+   ================================================================= */
+
+@media (max-width: 992px) {
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
@@ -431,20 +603,29 @@ footer {
     .menu-container {
         grid-template-columns: 1fr;
     }
-}
 
-/* --- Media Queries (Responsividad de menú actualizada para minimalismo) --- */
+    /* Responsive para menú semanal */
+    .plato-selectable {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
 
-@media (max-width: 992px) {
-    /* En tabletas, se ven mejor 2 columnas en lugar de 3 */
-    .menu-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
+    .plato-selectable img {
+        width: 100%;
+        height: 120px;
+    }
+
+    .alergenos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .semana-input {
+        max-width: 100%;
     }
 }
 
 @media (max-width: 500px) {
-    /* En móviles pequeños, solo 1 columna para mejor lectura */
     .menu-grid {
         grid-template-columns: 1fr;
     }

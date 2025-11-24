@@ -55,6 +55,14 @@ $is_authenticated = is_logged_in();
                         <label>URL de la Imagen</label>
                         <input type="text" id="nuevoImagen" placeholder="https://...">
                     </div>
+                    
+                    <div class="form-group">
+                        <label>Alérgenos</label>
+                        <div id="nuevoAlergenosContainer" class="alergenos-grid">
+                            <!-- Se llenará con JS -->
+                        </div>
+                    </div>
+
                     <div style="display: flex; gap: 0.5rem;">
                         <button onclick="guardarNuevoPlato()" class="btn">Guardar</button>
                         <button onclick="cancelarNuevo()" class="btn btn-danger">Cancelar</button>
@@ -63,14 +71,39 @@ $is_authenticated = is_logged_in();
 
                 <div id="platosAdmin"></div>
             
-                ---
-
+                <hr>
+                
+                <!-- GESTIÓN DE MENÚ SEMANAL -->
+                <div class="admin-panel" style="margin-top: 2rem;">
+                    <div class="admin-header">
+                        <h3 style="color: #2c5f2d;">📅 Gestión de Menú Semanal</h3>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Seleccionar Semana (Lunes)</label>
+                        <input type="date" id="semanaSelector" class="semana-input">
+                        <button onclick="cargarSemana()" class="btn btn-small" style="margin-left: 0.5rem;">Cargar Semana</button>
+                    </div>
+                    
+                    <div id="semanaInfo" style="margin: 1rem 0; padding: 1rem; background: white; border-radius: 5px; display: none;">
+                        <strong>Semana seleccionada:</strong> <span id="semanaTexto"></span>
+                    </div>
+                    
+                    <h4 style="margin-top: 1.5rem; color: #2c5f2d;">Platos Disponibles</h4>
+                    <p style="color: #666; font-size: 0.9rem;">Selecciona los platos que estarán disponibles en esta semana:</p>
+                    
+                    <div id="platosDisponibles" class="platos-disponibles-grid"></div>
+                    
+                    <button onclick="guardarMenuSemanal()" class="btn" style="margin-top: 1rem;">💾 Guardar Menú de la Semana</button>
+                </div>
+                
+                <hr>
+                
                 <div class="admin-panel" style="margin-top: 2rem;">
                     <div class="admin-header">
                         <h3 style="color: #2c5f2d;">Gestión de Reservas</h3>
                     </div>
-                    <div id="reservasAdmin">
-                        </div>
+                    <div id="reservasAdmin"></div>
                 </div>
             </div>
         </section>
@@ -82,11 +115,16 @@ $is_authenticated = is_logged_in();
 ?>
 <script>
     document.addEventListener('DOMContentLoaded', async () => {
-        // Cargar y renderizar los datos desde la BD solo si el panel está visible
-        await cargarMenu();
+        // CORRECCIÓN CLAVE: Pasamos 'true' a cargarMenu() para que use
+        // './api/admin_platos.php' (el endpoint que trae todos los platos).
+        await cargarMenu(true); 
+        
         renderPlatosAdmin();
         await cargarReservas();
         renderReservasAdmin();
+        
+        // Inicializar selector de semana con el lunes actual
+        setLunesActual();
     });
 </script>
 <?php endif; ?>

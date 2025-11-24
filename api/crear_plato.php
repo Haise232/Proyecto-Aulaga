@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $data = json_decode(file_get_contents("php://input"));
 
-// Validación de datos: asumimos que el nuevo plato debe estar activo (activo = 1)
+// Validación de datos
 if (empty($data->nombre) || empty($data->tipo) || empty($data->descripcion) || empty($data->imagen)) {
-    http_response_code(400); 
+    http_response_code(400);
     echo json_encode(["error" => "Faltan datos obligatorios."]);
     exit;
 }
@@ -27,27 +27,20 @@ $nombre = trim($data->nombre);
 $tipo = trim($data->tipo);
 $descripcion = trim($data->descripcion);
 $imagen = trim($data->imagen);
+// Por defecto, un plato nuevo se crea como activo (1)
+$activo = 1; 
+// Procesar alérgenos
+$alergenos = isset($data->alergenos) ? json_encode($data->alergenos) : '[]';
 
 try {
-    // 🚨 MODIFICACIÓN: Agregamos 'activo' a la consulta e insertamos el valor '1'
-    $sql = "INSERT INTO platos (tipo, nombre, descripcion, imagen, activo) VALUES (?, ?, ?, ?, 1)";
+    $sql = "INSERT INTO platos (tipo, nombre, descripcion, imagen, activo, alergenos) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$tipo, $nombre, $descripcion, $imagen]);
+    $stmt->execute([$tipo, $nombre, $descripcion, $imagen, $activo, $alergenos]);
 
-    http_response_code(201);
-    // Devolvemos los datos que JavaScript necesita para actualizar la lista
-    echo json_encode([
-        "success" => "Plato '{$nombre}' añadido correctamente.", 
-        "id" => $pdo->lastInsertId(),
-        "tipo" => $tipo,
-        "nombre" => $nombre,
-        "descripcion" => $descripcion,
-        "imagen" => $imagen,
-        "activo" => 1 // Importante para que JS lo sepa
-    ]);
+    echo json_encode(["success" => "Plato creado correctamente.", "id" => $pdo->lastInsertId()]);
 
 } catch (PDOException $e) {
-    http_response_code(500); 
+    http_response_code(500);
     error_log("Error de BD en crear_plato: " . $e->getMessage());
     echo json_encode(["error" => "Error al crear el plato: " . $e->getMessage()]);
 }

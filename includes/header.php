@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo">🌿 Restaurante Aulaga</div>
+            <div class="logo">🌺 Restaurante Aulaga</div>
             <ul class="nav-links">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="menu.php">Menú del Día</a></li>

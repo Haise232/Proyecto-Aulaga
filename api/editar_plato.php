@@ -28,19 +28,25 @@ $nombre = trim($data->nombre);
 $tipo = trim($data->tipo);
 $descripcion = trim($data->descripcion);
 $imagen = trim($data->imagen);
-$activo = (int)$data->activo; // 0 o 1
+$activo = intval($data->activo);
+// Procesar alérgenos
+$alergenos = isset($data->alergenos) ? json_encode($data->alergenos) : '[]';
 
 try {
-    // 🚨 MODIFICACIÓN: Agregamos 'activo = ?' a la consulta
-    $sql = "UPDATE platos SET tipo = ?, nombre = ?, descripcion = ?, imagen = ?, activo = ? WHERE id = ?";
+    // 🚨 MODIFICACIÓN: Agregamos 'alergenos' a la consulta UPDATE
+    $sql = "UPDATE platos SET tipo = ?, nombre = ?, descripcion = ?, imagen = ?, activo = ?, alergenos = ? WHERE id = ?";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$tipo, $nombre, $descripcion, $imagen, $activo, $id]);
+    $stmt->execute([$tipo, $nombre, $descripcion, $imagen, $activo, $alergenos, $id]);
 
-    http_response_code(200);
-    echo json_encode(["success" => "Plato '{$nombre}' actualizado correctamente.", "id" => $id]);
+    if ($stmt->rowCount() > 0) {
+        echo json_encode(["success" => "Plato actualizado correctamente."]);
+    } else {
+        // Si no se modificó nada (mismos datos) o ID no existe
+        echo json_encode(["success" => "Plato actualizado (sin cambios detectados o ID no encontrado)."]);
+    }
 
 } catch (PDOException $e) {
-    http_response_code(500);
+    http_response_code(500); 
     error_log("Error de BD en editar_plato: " . $e->getMessage());
     echo json_encode(["error" => "Error al actualizar el plato: " . $e->getMessage()]);
 }

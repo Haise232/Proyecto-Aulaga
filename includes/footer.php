@@ -1,7 +1,7 @@
 <footer>
         <div class="contact-info">
             <div class="contact-item">
-                📍 Calle Principal, 123 - Centro
+                📍 Calle Principal, 123 - CIFP Villa de Agüimes
             </div>
             <div class="contact-item">
                 📞 +34 912 345 678
