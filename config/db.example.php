@@ -1,26 +1,30 @@
 <?php
 /**
- * Configuración de Conexión a Base de Datos
+ * Configuración de Conexión a Base de Datos - EJEMPLO
  * 
- * Este archivo establece la conexión PDO con MySQL/MariaDB
- * para el sistema de gestión del Restaurante Aulaga.
+ * Este es un archivo de ejemplo. Copia este archivo como config.php
+ * y actualiza los valores según tu configuración de servidor.
  * 
- * IMPORTANTE: Este archivo NO debe ser incluido en el repositorio
- * si contiene credenciales reales. Está en .gitignore por seguridad.
+ * PASOS:
+ * 1. Copia este archivo: cp config.example.php config.php
+ * 2. Actualiza los valores de conexión
+ * 3. El archivo config.php está en .gitignore y no se subirá al repositorio
  * 
  * @package Restaurante-Aulaga
  * @author  Joaquín
  */
 
 // 1. Parámetros de Conexión
-// NOTA: Actualiza estos valores según tu configuración de servidor
 define('DB_HOST', 'localhost');           // Servidor de base de datos
 define('DB_NAME', 'restaurante_aulaga');  // Nombre de la base de datos
 define('DB_USER', 'root');                // Usuario de MySQL
-define('DB_PASS', '');                    // Contraseña del usuario (vacío para XAMPP/WAMP por defecto)
+define('DB_PASS', '');                    // Contraseña del usuario
+
+// 2. Configuración de Puerto (opcional)
+// define('DB_PORT', '3306');             // Puerto MySQL (por defecto 3306)
 
 try {
-    // 2. Crear la Conexión PDO
+    // 3. Crear la Conexión PDO
     $pdo = new PDO(
         "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4", 
         DB_USER, 
@@ -33,9 +37,10 @@ try {
     );
 
 } catch (PDOException $e) {
-    // 3. Manejo de Errores de Conexión
+    // 4. Manejo de Errores de Conexión
     error_log("Error de conexión a la BD: " . $e->getMessage());
     die("<h1>Error al conectar con la base de datos.</h1><p>Por favor, compruebe que la base de datos 'restaurante_aulaga' existe y que MySQL/MariaDB está activo.</p>");
 }
 
 // $pdo está ahora disponible para ser incluido en cualquier otro archivo.
+?>

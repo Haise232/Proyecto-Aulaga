@@ -1,0 +1,56 @@
+# Configuración de base de datos (contiene credenciales sensibles)
+config/db.php
+
+# Archivos de contraseñas
+config/auth.php
+
+# Archivos de sesión PHP
+*.session
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Logs
+*.log
+logs/
+error_log
+
+# Cache
+cache/
+*.cache
+
+# Uploads (si hay carpeta de uploads)
+uploads/
+img/uploads/
+
+# Dependencias (si usas Composer en el futuro)
+/vendor/
+composer.lock
+
+# Variables de entorno
+.env
+.env.local
+
+# Backups de base de datos
+*.sql.gz
+*.sql.backup
+backup/
+
+# Archivos de testing
+phpunit.xml
+.phpunit.result.cache
+
+# Node modules (si hay herramientas de build)
+node_modules/
+package-lock.json
